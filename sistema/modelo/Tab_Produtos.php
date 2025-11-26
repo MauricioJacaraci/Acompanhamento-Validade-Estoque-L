@@ -24,10 +24,11 @@ class Tab_Produtos extends Modelos
     public function cadastrarProduto(array $produto): void
     {
 
-        $query = "INSERT INTO cadastro_produtos (produto, data_validade, quantidade) VALUES (:produto, :data_validade, :quantidade)";
+        $query = "INSERT INTO cadastro_produtos (produto, categoria, data_validade, quantidade) VALUES (:produto, :categoria, :data_validade, :quantidade)";
 
         $stmt = Conexao::getInstancia()->prepare($query);
         $stmt->bindValue(':produto', $produto['produto'], \PDO::PARAM_STR);
+        $stmt->bindValue(':categoria', $produto['categoria'], \PDO::PARAM_STR);
         $stmt->bindValue(':data_validade', $produto['validade'], \PDO::PARAM_STR);
         $stmt->bindValue(':quantidade', $produto['quantidade'] ?? 0, \PDO::PARAM_INT); // 0 se não vier
         $stmt->execute();

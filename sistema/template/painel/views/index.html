@@ -3,6 +3,7 @@
 {% block conteudo %}
 
 <div class="filtro">
+    <h2>Filtro</h2>
     <div class="categoria1">
         <label class="label-categoria1" for="categoria">Categoria</label>
         <select class="placeholder-categoria1" name="categoria" id="categoria" required="">
@@ -16,10 +17,10 @@
             </optgroup>
         </select>
     </div>
-    <div class="search"><i class="fa-solid fa-magnifying-glass fa-rotate-90"></i></div>
+    <div class="search">Buscar<i class="fa-solid fa-magnifying-glass fa-rotate-90"></i></div>
 </div>
 
-<div class="container2">
+<div class="container">
 
     {% if produtos is empty %}
     <p class="nenhum_produto">Nenhum produto cadastrado.</p>
@@ -35,7 +36,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="tr">
                 <td>{{ produto.produto }}</td>
                 <td>{{ produto.data_validade|date("d/m/Y") }}</td>
 
@@ -73,9 +74,6 @@
 
 </div>
 
-<footer class="footer">
-    <button class="btn-abrir" id="abrirModalAdicionar"><i class="fa-solid fa-pen-to-square"></i></button>
-    {{ include('modalCadastroProduto.html') }}
-</footer>
+
 
 {% endblock %}

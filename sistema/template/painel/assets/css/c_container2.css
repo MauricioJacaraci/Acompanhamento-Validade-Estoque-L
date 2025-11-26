@@ -40,18 +40,14 @@
 .tabela_produtos {
     width: 100%;
     border-collapse: collapse;
-    /* margin-top: 10px; */
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    /* border-top-left-radius: 20px;
-    border-top-right-radius: 20px; */
+    font-size: 12px;
     overflow: hidden;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .tabela_produtos thead {
     background-color: #212529;
-    /* Preto/cinza moderno */
     color: #fff;
     text-transform: uppercase;
     font-size: 10px;
@@ -62,6 +58,9 @@
     padding: 3px 12px 2px 12px;
     text-align: left;
     border-bottom: 1px solid #e9ecef;
+}
+.tr{
+    background-color: #00458b4a;
 }
 
 .tabela_produtos tbody tr:nth-child(even) {

@@ -38,18 +38,25 @@
 </head>
 
 <body>
-    <div class="container1">
-
+    <header>
         <h1 class="titulo1">Controle de Validade</h1>    
+    </header>
 
+    <section>
         {% block conteudo %} {% endblock %}
-    
-        <footer class="footer_base">
-            &copy; Mauricio - 2025 - Todos os direitos reservados.
-        </footer>
+    </section>
 
-    </div>
-    
+    <footer>
+        <div class="botoes">
+            <button class="btn-abrir" id="abrirModalCategoria"><i class="fa-solid fa-chart-bar"></i></button>
+            <button class="btn-abrir" id="abrirModalAdicionar"><i class="fa-solid fa-pen-to-square"></i></button>
+            {{ include('modalCadastroProduto.html') }}
+            {{ include('modalCadastroCategorias.html') }}
+        </div>
+        <div class="direitos">
+            &copy; Mauricio - 2025 - Todos os direitos reservados.
+        </div>
+    </footer>    
 
     <!-- SCRIPT PARA ICONES -->
     <script src="https://kit.fontawesome.com/647ff365ba.js" crossorigin="anonymous"></script>

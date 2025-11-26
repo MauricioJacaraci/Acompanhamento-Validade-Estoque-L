@@ -1,6 +1,6 @@
 // Obtém os elementos do DOM
-const modalAdicionar = document.getElementById("modalAdicionar");
-const btn_Adicionar = document.getElementById("abrirModalAdicionar");
+const modalCategoria = document.getElementById("modalCategoria");
+const btn_Categoria = document.getElementById("abrirModalCategoria");
 const span_Adicionar = document.querySelector(".fecharModal");
 
 // Quando o usuário clica no botão, o modal aparece
