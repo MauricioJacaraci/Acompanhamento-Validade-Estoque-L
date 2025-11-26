@@ -33,6 +33,15 @@ class Tab_Produtos extends Modelos
         $stmt->bindValue(':quantidade', $produto['quantidade'] ?? 0, \PDO::PARAM_INT); // 0 se não vier
         $stmt->execute();
     }
+    public function cadastrarCategoria(array $categoria): void
+    {
+
+        $query = "INSERT INTO categorias (categoria) VALUES (:categoria)";
+
+        $stmt = Conexao::getInstancia()->prepare($query);
+        $stmt->bindValue(':produto', $categoria['nova_categoria'], \PDO::PARAM_STR);
+        $stmt->execute();
+    }
 
 
     public function excluirProduto(int $id): void

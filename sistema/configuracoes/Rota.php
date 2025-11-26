@@ -14,6 +14,9 @@ try {
       //ROTA DE CADASTRAR PRODUTO
       SimpleRouter::match(['get', 'post'], URL_SITE . 'cadastrarProduto', 'SiteControlador@cadastrarProduto');
       // ----------------------------------------------------------
+      //ROTA DE CADASTRAR CATEGORIA
+      SimpleRouter::match(['get', 'post'], URL_SITE . 'cadastrarCategoria', 'SiteControlador@cadastrarCategoria');
+      // ----------------------------------------------------------
       //ROTA DE EXCLUIR PRODUTO
       SimpleRouter::match(['get', 'post'], URL_SITE . 'produtoExcluir/{id}', 'SiteControlador@excluirProduto');
       // ----------------------------------------------------------

@@ -4,6 +4,7 @@ namespace sistema\controladores\PainelAdministrativo;
 
 use sistema\controladores\Principal\Controlador;
 use sistema\modelo\Tab_Produtos;
+use sistema\modelo\Tab_Categorias;
 use sistema\configuracoes\Helpers;
 
 class SiteControlador extends Controlador
@@ -55,6 +56,23 @@ class SiteControlador extends Controlador
             (new Tab_Produtos())->cadastrarProduto($produto);
             // echo '<pre>';
             // print_r($produto);
+            // echo '</pre>';
+            // exit;
+        }
+
+        // Redireciona de volta para a rota 'index'
+        Helpers::redirecionar('index');
+    }
+    public function cadastrarCategoria()
+    {
+        // Captura todos os dados enviados via POST e aplica filtro padrão
+        $categoria = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+        
+        // Verifica se a variável $categoria existe
+        if (!empty($categoria)) {            
+            (new Tab_Categorias())->cadastrarCategoria($categoria);
+            // echo '<pre>';
+            // print_r($categoria);
             // echo '</pre>';
             // exit;
         }
