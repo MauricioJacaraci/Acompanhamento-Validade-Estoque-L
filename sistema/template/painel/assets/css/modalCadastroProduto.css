@@ -166,7 +166,7 @@
 .infoProduto2>label {
     background-color: #000000;
     color: white;
-    height: 20px;
+    height: 100%;
     font-size: 12px;
     display: flex;
     justify-content: center;
