@@ -133,6 +133,11 @@
 
     gap: 10px;
 }
+@media screen and (max-height: 750px) {
+    .filtro {
+        height: 15%;
+    }
+}
 .filtro>h2{
     text-align: center;
     font-size: 20px;
