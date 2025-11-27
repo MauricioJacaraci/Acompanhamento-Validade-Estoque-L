@@ -27,7 +27,11 @@ class Tab_Produtos extends Modelos
         $query = "INSERT INTO cadastro_produtos (produto, categoria, data_validade, quantidade) VALUES (:produto, :categoria, :data_validade, :quantidade)";
 
         $stmt = Conexao::getInstancia()->prepare($query);
-        $stmt->bindValue(':produto', $produto['produto'], \PDO::PARAM_STR);
+
+        // transforma em maiúsculas antes de enviar
+        $produtoMaiusculo   = strtoupper($produto['produto']);
+
+        $stmt->bindValue(':produto', $produtoMaiusculo, \PDO::PARAM_STR);
         $stmt->bindValue(':categoria', $produto['categoria'], \PDO::PARAM_STR);
         $stmt->bindValue(':data_validade', $produto['validade'], \PDO::PARAM_STR);
         $stmt->bindValue(':quantidade', $produto['quantidade'] ?? 0, \PDO::PARAM_INT); // 0 se não vier
@@ -39,7 +43,10 @@ class Tab_Produtos extends Modelos
         $query = "INSERT INTO categorias (categoria) VALUES (:categoria)";
 
         $stmt = Conexao::getInstancia()->prepare($query);
-        $stmt->bindValue(':produto', $categoria['nova_categoria'], \PDO::PARAM_STR);
+
+        $categoriaMaiuscula = strtoupper($categoria['categoria']);
+
+        $stmt->bindValue(':produto', $categoriaMaiuscula, \PDO::PARAM_STR);
         $stmt->execute();
     }
 
